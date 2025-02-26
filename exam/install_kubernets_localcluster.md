@@ -16,9 +16,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 
 # IPv4 Forwarding aktivieren (every node)
 
-cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
-net.ipv4.ip_forward = 1
-EOF
+sysctl net.ipv4.ip_forward=1
 
 # Apply sysctl params without reboot
 sudo sysctl --system
