@@ -47,3 +47,6 @@ kubeadm join 192.168.178.90:6443 --token ypbpdo.vciu7h1zbb00ltz2 \
 # wenn Token existiert/ Commando nochmal ausgegeben werden soll
 kubeadm token create --print-join-command
 
+# wenn Nodes gleiche IP Adressen haben
+vim /etc/default/kubelet -> KUBELET_EXTRA_ARGS=--node-ip=ABCXYZ
+
